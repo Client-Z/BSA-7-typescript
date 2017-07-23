@@ -1,33 +1,27 @@
-import Fighter from "./Fighter";
-import ImprovedFighter from "./ImprovedFighter";
+import IFighter from "./Fighter";
+import { IimprovedFighter } from "./ImprovedFighter";
 
 export default class Fight {
-/*    fighter: Fighter;
-    fighter2: ImprovedFighter;
 
-    constructor(fighter: Fighter, fighter2: ImprovedFighter) {
-        this.fighter = fighter;
-        this.fighter2 = fighter2;
-    }*/
-
-    fight(fighter: Fighter, fighter2: ImprovedFighter, point: number[]): void {
+    fight(fighter: IFighter, fighter2: IimprovedFighter, point: number[]): void {
         console.log('---- Game has begun ----');
 
-        for (var i = 0; i < point.length; i++) {
+        for (let i = 0; i < point.length; i++) {
             if(fighter.health <= 0 || fighter2.health <= 0) {
                 console.log('---- Game over! ---- ');
-                fighter.health > 0 ? console.log(`${fighter.name} is Winner!`) :
-                    console.log(`${fighter2.name} is Winner!`);
+                fighter.health <= 0 ? console.log(`${fighter2.name} is Winner!`):
+                    console.log(`${fighter.name} is Winner!`);
                 break;
             }
 
+            //fighter.health > 0 ? fighter.hit(fighter2, point[i]) : console.log(`${fighter2.name} is Winner!`);
+
             fighter.hit(fighter2, point[i]);
-            fighter2.hit(fighter, point[i]);
+            fighter2.health > 0 ? fighter2.doubleHit(fighter, point[i]) : console.log(`${fighter.name} is Winner!`);
 
-        }
-
-        if(i == point.length && fighter.health > 0 && fighter2.health > 0) {
-            console.log("They still alive! Give them more damage :)")
+            if( (i == point.length - 1) && fighter.health > 0 && fighter2.health > 0) {
+                console.log("They still alive! Give them more damage :)")
+            }
         }
 
     }

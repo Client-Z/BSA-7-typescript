@@ -21,6 +21,12 @@ module.exports = {
             { test: /\.tsx?$/, loader: 'ts-loader' }
         ]
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Typescript Webpack Starter',
+            template: '!!ejs-loader!src/view/index.html'
+        })
+    ],
     devServer: {
         inline:true,
         port: 4040

@@ -1,10 +1,10 @@
-interface IFighter {
+export interface IFighter {
     readonly name: string;
     power: number;
     health: number;
 
     setDamage(damage: number): void;
-    hit(enemy: object, point: number): void;
+    hit(enemy: Fighter, point: number): void;
 }
 
 export default class Fighter implements IFighter {
