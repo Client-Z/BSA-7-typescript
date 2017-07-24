@@ -26,7 +26,7 @@ export default class Fighter implements IFighter {
         console.log(`${this.name} has ${health} health`);
     }
 
-    hit(enemy: Fighter, point: number){
+    hit(enemy: IFighter, point: number){
         let damage = point * this.power;
         enemy.setDamage(damage);
     }

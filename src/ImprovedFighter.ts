@@ -1,13 +1,8 @@
 import Fighter, { IFighter } from './Fighter';
 
 export interface IimprovedFighter extends IFighter {
-    readonly name: string;
-    power: number;
-    health: number;
-
     doubleHit(enemy: Fighter, point: number);
 }
-
 
 export default class ImprovedFighter extends Fighter implements IimprovedFighter{
 

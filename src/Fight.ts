@@ -14,8 +14,6 @@ export default class Fight {
                 break;
             }
 
-            //fighter.health > 0 ? fighter.hit(fighter2, point[i]) : console.log(`${fighter2.name} is Winner!`);
-
             fighter.hit(fighter2, point[i]);
             fighter2.health > 0 ? fighter2.doubleHit(fighter, point[i]) : console.log(`${fighter.name} is Winner!`);
 
