@@ -1,4 +1,4 @@
-# BSA-7-TypeScript
+# Try-TypeScript
 
 
 Створити класс “Fighter”. Клас повиненин приймати значення name, power і health. Також клас повинен мати методи “setDamage” та “hit”.
